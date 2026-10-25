@@ -17,6 +17,7 @@ class Clock:
 def clock(monkeypatch: pytest.MonkeyPatch) -> Clock:
     clock = Clock()
     monkeypatch.setattr(time, "monotonic", lambda: clock.now)
+    monkeypatch.setattr(time, "time", lambda: clock.now)
     monkeypatch.setattr(time, "sleep", clock.sleep)
     return clock
 

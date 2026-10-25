@@ -12,7 +12,9 @@ COURSE = Course("course", "class", "cpi", "课程")
 CHAPTER = Chapter("chapter", "章节")
 
 
-def test_media_resumes_and_advances_with_elapsed_time(tmp_path: Path) -> None:
+def test_media_checks_end_then_resumes_card_progress(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     positions: list[int] = []
 
     def handle(request: httpx.Request) -> httpx.Response:
@@ -22,7 +24,7 @@ def test_media_resumes_and_advances_with_elapsed_time(tmp_path: Path) -> None:
             )
         position = int(request.url.params["playingTime"])
         positions.append(position)
-        return httpx.Response(200, json={"isPassed": position == 10})
+        return httpx.Response(200, json={"isPassed": len(positions) > 1 and position == 10})
 
     client = ChaoxingClient(
         AccountConfig(cookies_file=tmp_path / "cookie"),
@@ -31,22 +33,26 @@ def test_media_resumes_and_advances_with_elapsed_time(tmp_path: Path) -> None:
         ),
     )
     client.http.cookies.set("_uid", "42", domain=".chaoxing.com")
-    Study(client, speed=2).execute(COURSE, CHAPTER, Task("video", "v", object_id="o"), interval=3)
-    assert positions[0] == 4
+    monkeypatch.setattr("chaoxing.study.random.uniform", lambda a, b: a)
+    Study(client, speed=2).execute(
+        COURSE, CHAPTER, Task("video", "v", object_id="o", played_seconds=5), interval=3
+    )
+    assert positions[0] == 10
+    assert positions[1] == 10
     assert positions[-1] == 10
     assert all(left <= right for left, right in zip(positions, positions[1:], strict=False))
     assert len(positions) >= 2
     client.close()
 
 
-def test_unconfirmed_media_end_is_bounded(tmp_path: Path) -> None:
+def test_media_end_continues_until_server_confirms(tmp_path: Path) -> None:
     reports = []
 
     def handle(request: httpx.Request) -> httpx.Response:
         if "/status/" in request.url.path:
             return httpx.Response(200, json={"status": "success", "duration": 0, "dtoken": "t"})
         reports.append(request)
-        return httpx.Response(200, json={"isPassed": False})
+        return httpx.Response(200, json={"isPassed": len(reports) >= 8})
 
     client = ChaoxingClient(
         AccountConfig(cookies_file=tmp_path / "cookie"),
@@ -55,9 +61,10 @@ def test_unconfirmed_media_end_is_bounded(tmp_path: Path) -> None:
         ),
     )
     client.http.cookies.set("_uid", "42", domain=".chaoxing.com")
-    with pytest.raises(ProtocolError, match="五次"):
-        Study(client, speed=1).execute(COURSE, CHAPTER, Task("video", "v", object_id="o"), 60)
-    assert len(reports) == 5
+    Study(client, speed=1).execute(COURSE, CHAPTER, Task("video", "v", object_id="o"), 60)
+    assert len(reports) == 8
+    assert reports[0].url.params["isdrag"] == "4"
+    assert all(report.url.params["isdrag"] == "3" for report in reports[1:])
     client.close()
 
 

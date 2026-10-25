@@ -8,9 +8,32 @@ from pydantic import SecretStr
 from chaoxing.client import ChaoxingClient
 from chaoxing.config import AccountConfig
 from chaoxing.cookies import cookie_value, read_cookies, save_cookies
-from chaoxing.models import AuthenticationError, CaptchaRequired, Chapter, Course, ProtocolError
+from chaoxing.models import (
+    AuthenticationError,
+    CaptchaRequired,
+    Chapter,
+    Course,
+    NoChapters,
+    ProtocolError,
+)
 
 COURSE = Course("c", "class", "cpi", "课程")
+
+
+def test_explicit_empty_chapter_page_is_distinct_from_unknown_page(tmp_path: Path) -> None:
+    client = ChaoxingClient(
+        AccountConfig(cookies_file=tmp_path / "cookie"),
+        httpx.Client(
+            transport=httpx.MockTransport(
+                lambda _: httpx.Response(
+                    200, text='<div class="chapter_body"><p>暂无章节内容</p></div>'
+                )
+            ),
+        ),
+    )
+    with pytest.raises(NoChapters, match="暂无章节内容"):
+        client.chapters(COURSE)
+    client.close()
 
 
 def test_password_login_is_encrypted_and_persists_cookies(tmp_path: Path) -> None:

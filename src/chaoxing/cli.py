@@ -42,6 +42,7 @@ def run(
     *,
     course_ids: str | None = None,
     list_courses: bool = False,
+    test_notification: bool = False,
     use_cookies: bool | None = None,
     speed: float | None = None,
     max_attempts: int | None = None,
@@ -63,6 +64,13 @@ def run(
             },
         )
         notification = Telegram(config.telegram)
+        if test_notification:
+            return 0 if notification.send("chaoxing：Telegram 推送测试。") else 1
+        logger.info(
+            "Telegram 已启用：本轮结束、启动异常或手动中断时推送"
+            if notification.enabled
+            else "Telegram 未配置，本轮不发送通知",
+        )
         client = ChaoxingClient(_credentials(config.account))
         client.login()
         courses = client.courses()
@@ -94,6 +102,9 @@ def command(
     config: Annotated[Path | None, typer.Option("--config", "-c", help="TOML 配置路径")] = None,
     courses: Annotated[str | None, typer.Option(help="课程 ID，逗号分隔；留空处理所有课程")] = None,
     list_courses: Annotated[bool, typer.Option("--list-courses", help="只显示课程列表")] = False,
+    test_notification: Annotated[
+        bool, typer.Option("--test-notification", help="发送 Telegram 测试通知后退出")
+    ] = False,
     use_cookies: Annotated[bool | None, typer.Option("--use-cookies/--no-use-cookies")] = None,
     speed: Annotated[float | None, typer.Option(min=1, max=2, help="播放倍速，默认 1")] = None,
     max_attempts: Annotated[
@@ -109,6 +120,7 @@ def command(
             config,
             course_ids=courses,
             list_courses=list_courses,
+            test_notification=test_notification,
             use_cookies=use_cookies,
             speed=speed,
             max_attempts=max_attempts,

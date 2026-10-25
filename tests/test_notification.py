@@ -46,3 +46,38 @@ def test_send_failure_does_not_leak_token(caplog: pytest.LogCaptureFixture) -> N
         ).send("text")
     assert "private-token" not in caplog.text
     assert "发送失败" in caplog.text
+
+
+def test_api_error_description_is_visible_and_redacted(caplog: pytest.LogCaptureFixture) -> None:
+    http = httpx.Client(
+        transport=httpx.MockTransport(
+            lambda _: httpx.Response(
+                403,
+                json={"ok": False, "description": "Forbidden: bot was blocked private-token"},
+            )
+        )
+    )
+    with (
+        caplog.at_level(logging.WARNING),
+        patch("chaoxing.notification.httpx.Client", return_value=http),
+    ):
+        assert not Telegram(
+            TelegramConfig(bot_token=SecretStr("private-token"), chat_id="123")
+        ).send("text")
+    assert "HTTP 403" in caplog.text
+    assert "bot was blocked" in caplog.text
+    assert "private-token" not in caplog.text
+
+
+def test_success_is_logged(caplog: pytest.LogCaptureFixture) -> None:
+    http = httpx.Client(
+        transport=httpx.MockTransport(lambda _: httpx.Response(200, json={"ok": True}))
+    )
+    with (
+        caplog.at_level(logging.INFO),
+        patch("chaoxing.notification.httpx.Client", return_value=http),
+    ):
+        assert Telegram(TelegramConfig(bot_token=SecretStr("private-token"), chat_id="123")).send(
+            "text"
+        )
+    assert "通知已发送" in caplog.text

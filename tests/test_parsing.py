@@ -36,8 +36,7 @@ def test_json_with_spaces_and_embedded_braces_is_preserved() -> None:
 @pytest.mark.parametrize(
     "html",
     [
-        "mArg = broken;",
-        "mArg = [];",
+        "mArg = {broken};",
         'mArg = {"attachments":false};',
         'mArg = {"attachments":[{"type":"video","job":true}]};',
     ],
@@ -50,6 +49,44 @@ def test_malformed_card_fails_instead_of_reporting_completion(html: str) -> None
 def test_missing_card_and_locked_card_are_distinct() -> None:
     assert not parse_card("<html></html>").recognized
     assert parse_card("章节未开放").locked
+
+
+def test_empty_marg_declaration_precedes_actual_object() -> None:
+    card = parse_card("""<script>var mArg=""; mArg = {"defaults":{"reportTimeInterval":60},
+      "attachments":[{"type":"video","job":true,"mid":"m","objectId":"o"}]};</script>""")
+    assert card.recognized
+    assert card.tasks[0].kind == "video"
+    assert card.tasks[0].object_id == "o"
+
+
+def test_empty_marg_declaration_alone_is_not_a_task_object() -> None:
+    assert not parse_card('var mArg="";').recognized
+
+
+def test_empty_page_with_jquery_runtime_assignment_is_ignored() -> None:
+    assert not parse_card('var mArg=""; mArg=$.parseJSON(parent.data);').recognized
+
+
+@pytest.mark.parametrize("rt", [None, 0, ""])
+def test_empty_rt_keeps_hint_or_fallback_path(rt: object) -> None:
+    html = (
+        "mArg="
+        + json.dumps(
+            {
+                "attachments": [
+                    {
+                        "type": "video",
+                        "job": True,
+                        "mid": "m",
+                        "objectId": "o",
+                        "property": {"rt": rt},
+                    }
+                ]
+            }
+        )
+        + ";"
+    )
+    assert parse_card(html).tasks[0].rt == ""
 
 
 def test_chapter_completion_and_lock_status() -> None:

@@ -16,6 +16,7 @@ from chaoxing.models import (
     ChaoxingError,
     Chapter,
     Course,
+    NoChapters,
     Result,
     Status,
     Summary,
@@ -62,7 +63,7 @@ class Runner:
         for attempt in range(1, self.config.max_attempts + 1):
             try:
                 return operation()
-            except (AuthenticationError, CaptchaRequired):
+            except (AuthenticationError, CaptchaRequired, NoChapters):
                 # 需要手动介入的情况不重复请求。
                 raise
             except Exception as exc:
@@ -95,6 +96,10 @@ class Runner:
             logger.info("课程：%s（班级 %s）", course.title, course.class_id)
             try:
                 chapters = self._retry(partial(self.client.chapters, course))
+            except NoChapters as exc:
+                logger.info("跳过 %s：%s", course.title, exc)
+                summary.results.append(Result(course, None, None, Status.SKIPPED, str(exc)))
+                continue
             except Exception as exc:
                 summary.results.append(Result(course, None, None, Status.FAILED, error_detail(exc)))
                 continue

@@ -23,7 +23,7 @@ requires = ["uv_build>=0.12,<0.14"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-source-include = ["config.example.toml", "tests/*.py", "uv.lock", ".python-version"]
+source-include = ["config.example.toml", "tests/*.py", "tests/fixtures/*.json", "uv.lock", ".python-version"]
 
 [project.optional-dependencies]
 ocr = ["ddddocr>=1.6.1"]

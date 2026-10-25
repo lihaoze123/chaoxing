@@ -1,0 +1,1284 @@
+{
+  "reference_commit": "45d2106b",
+  "cases": [
+    {
+      "name": "instant_end_probe",
+      "duration": 120,
+      "played": 30,
+      "speed": 1,
+      "mode": "instant",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "120",
+            "duration": "120",
+            "clipTime": "0_120",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "b783faed327e180c3e9283e7f1c18461",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        }
+      ]
+    },
+    {
+      "name": "random_interval",
+      "duration": 130,
+      "played": 10,
+      "speed": 1,
+      "mode": "normal",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "130",
+            "duration": "130",
+            "clipTime": "0_130",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "f96b857cc89fafcfac76d3d8016fd3d9",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1052.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "130",
+            "clipTime": "0_130",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "460ec946fe1a5cba9f035099e73f56d5",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1052000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1112.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "120",
+            "duration": "130",
+            "clipTime": "0_130",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "b9661b00cc8548489a6729148772c303",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1112000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1122.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "130",
+            "duration": "130",
+            "clipTime": "0_130",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "f96b857cc89fafcfac76d3d8016fd3d9",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1122000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        }
+      ]
+    },
+    {
+      "name": "double_speed",
+      "duration": 130,
+      "played": 10,
+      "speed": 2,
+      "mode": "normal",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "130",
+            "duration": "130",
+            "clipTime": "0_130",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "f96b857cc89fafcfac76d3d8016fd3d9",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1027.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "130",
+            "clipTime": "0_130",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "460ec946fe1a5cba9f035099e73f56d5",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1027000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1057.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "120",
+            "duration": "130",
+            "clipTime": "0_130",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "b9661b00cc8548489a6729148772c303",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1057000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1062.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "130",
+            "duration": "130",
+            "clipTime": "0_130",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "f96b857cc89fafcfac76d3d8016fd3d9",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1062000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        }
+      ]
+    },
+    {
+      "name": "resume_and_explicit_rt",
+      "duration": 150,
+      "played": 65.9,
+      "speed": 1.5,
+      "mode": "normal",
+      "rt": "1",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "150",
+            "duration": "150",
+            "clipTime": "0_150",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "b1ebbcba00f9ae928d22b31dd0546c3a",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1006.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "65",
+            "duration": "150",
+            "clipTime": "0_150",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "420daae5c63b2629acc1bb3dc85ba100",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1006000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1042.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "125",
+            "duration": "150",
+            "clipTime": "0_150",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "d799261ee5a5c1538c1266b2c908ae83",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1042000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1059.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "150",
+            "duration": "150",
+            "clipTime": "0_150",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "b1ebbcba00f9ae928d22b31dd0546c3a",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1059000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        }
+      ]
+    },
+    {
+      "name": "rt_hint",
+      "duration": 85,
+      "played": 10,
+      "speed": 1,
+      "mode": "normal",
+      "other_info": "nodeId_chapter-rt_d",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "85",
+            "duration": "85",
+            "clipTime": "0_85",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-rt_d",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "f18b8e943008514f8a959500727cf34d",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1052.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "85",
+            "clipTime": "0_85",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-rt_d",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "f3ea3c15bbd59055a1a037a6cddcfa74",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1052000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1077.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "85",
+            "duration": "85",
+            "clipTime": "0_85",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-rt_d",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "f18b8e943008514f8a959500727cf34d",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1077000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        }
+      ]
+    },
+    {
+      "name": "repeat_end_until_confirmed",
+      "duration": 0,
+      "played": 0,
+      "speed": 1,
+      "mode": "delayed_end",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1006.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1006000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1009.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1009000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1012.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1012000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1015.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1015000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1018.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1018000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1021.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1021000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1024.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1024000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        }
+      ]
+    },
+    {
+      "name": "audio_after_report_failure",
+      "duration": 0,
+      "played": 0,
+      "speed": 1,
+      "mode": "audio_after_failure",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1006.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1006000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1006.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/audio/index_new.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1009.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "0",
+            "duration": "0",
+            "clipTime": "0_0",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "e531fb7e87856ecdde5ea41b871556f0",
+            "dtype": "Audio",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1009000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/audio/index_new.html?v=2025-0725-1842"
+        }
+      ]
+    },
+    {
+      "name": "rt_fallback_after_403",
+      "duration": 85,
+      "played": 10,
+      "speed": 1,
+      "mode": "rt_fallback",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "85",
+            "duration": "85",
+            "clipTime": "0_85",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "f18b8e943008514f8a959500727cf34d",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1009.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "85",
+            "duration": "85",
+            "clipTime": "0_85",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "f18b8e943008514f8a959500727cf34d",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1009000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1052.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "85",
+            "clipTime": "0_85",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "f3ea3c15bbd59055a1a037a6cddcfa74",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1052000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1058.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "85",
+            "clipTime": "0_85",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "f3ea3c15bbd59055a1a037a6cddcfa74",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1058000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1077.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "85",
+            "duration": "85",
+            "clipTime": "0_85",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "f18b8e943008514f8a959500727cf34d",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "0.9",
+            "_t": "1077000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1083.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "85",
+            "duration": "85",
+            "clipTime": "0_85",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "f18b8e943008514f8a959500727cf34d",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1083000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        }
+      ]
+    },
+    {
+      "name": "refresh_token_after_403",
+      "duration": 100,
+      "played": 60,
+      "speed": 1,
+      "mode": "refresh_403",
+      "rt": "1",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "100",
+            "duration": "100",
+            "clipTime": "0_100",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "ab133020bce4d363991b4ecca2e33300",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1006.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "100",
+            "clipTime": "0_100",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "b1968f1a2759cee824ed9a5e8d989055",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1006000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1015.1,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1042.1,
+          "path": "/mooc-ans/multimedia/log/a/cpi/refreshed",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "100",
+            "clipTime": "0_100",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "b1968f1a2759cee824ed9a5e8d989055",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1042099"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1082.1,
+          "path": "/mooc-ans/multimedia/log/a/cpi/refreshed",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "100",
+            "duration": "100",
+            "clipTime": "0_100",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "ab133020bce4d363991b4ecca2e33300",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1082100"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        }
+      ]
+    },
+    {
+      "name": "forbidden_exhausted_then_audio",
+      "duration": 100,
+      "played": 60,
+      "speed": 1,
+      "mode": "forbidden_exhausted",
+      "rt": "1",
+      "trace": [
+        {
+          "at": 1000.0,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1003.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "100",
+            "duration": "100",
+            "clipTime": "0_100",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "ab133020bce4d363991b4ecca2e33300",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1003000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1006.0,
+          "path": "/mooc-ans/multimedia/log/a/cpi/token",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "100",
+            "clipTime": "0_100",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "b1968f1a2759cee824ed9a5e8d989055",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1006000"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1015.1,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1042.1,
+          "path": "/mooc-ans/multimedia/log/a/cpi/refreshed",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "100",
+            "clipTime": "0_100",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "b1968f1a2759cee824ed9a5e8d989055",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1042099"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1051.2,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1082.2,
+          "path": "/mooc-ans/multimedia/log/a/cpi/refreshed",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "60",
+            "duration": "100",
+            "clipTime": "0_100",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "3",
+            "view": "pc",
+            "enc": "b1968f1a2759cee824ed9a5e8d989055",
+            "dtype": "Video",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1082199"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/video/index.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1088.2,
+          "path": "/ananas/status/object",
+          "params": {
+            "k": "1024",
+            "flag": "normal"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/audio/index_new.html?v=2025-0725-1842"
+        },
+        {
+          "at": 1089.2,
+          "path": "/mooc-ans/multimedia/log/a/cpi/refreshed",
+          "params": {
+            "clazzId": "class",
+            "playingTime": "100",
+            "duration": "100",
+            "clipTime": "0_100",
+            "objectId": "object",
+            "otherInfo": "nodeId_chapter-",
+            "courseId": "course",
+            "jobid": "job",
+            "userid": "42",
+            "isdrag": "4",
+            "view": "pc",
+            "enc": "ab133020bce4d363991b4ecca2e33300",
+            "dtype": "Audio",
+            "videoFaceCaptureEnc": "face-enc",
+            "attDuration": "120",
+            "attDurationEnc": "duration-enc",
+            "rt": "1",
+            "_t": "1089199"
+          },
+          "referer": "https://mooc1.chaoxing.com/ananas/modules/audio/index_new.html?v=2025-0725-1842"
+        }
+      ]
+    }
+  ]
+}

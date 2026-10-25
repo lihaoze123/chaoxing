@@ -6,7 +6,16 @@ import pytest
 
 from chaoxing.client import ChaoxingClient
 from chaoxing.config import AccountConfig, StudyConfig
-from chaoxing.models import CaptchaRequired, Card, Chapter, Course, ProtocolError, Status, Task
+from chaoxing.models import (
+    CaptchaRequired,
+    Card,
+    Chapter,
+    Course,
+    NoChapters,
+    ProtocolError,
+    Status,
+    Task,
+)
 from chaoxing.runner import Runner, select_courses
 
 COURSE = Course("course", "class", "cpi", "课程")
@@ -159,3 +168,20 @@ def test_missing_course_never_falls_back_to_all() -> None:
         select_courses([COURSE], ("typo",))
     same_id_other_class = Course(COURSE.id, "other-class", "cpi", "课程")
     assert len(select_courses([COURSE, COURSE, same_id_other_class], (COURSE.id,))) == 2
+
+
+def test_empty_course_is_skipped_without_retry(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    client = make_client(tmp_path)
+    calls = []
+
+    def chapters(course: Course) -> list[Chapter]:
+        calls.append(course.id)
+        raise NoChapters("课程暂无章节内容")
+
+    monkeypatch.setattr(client, "chapters", chapters)
+    summary = Runner(client, StudyConfig(max_attempts=3)).run([COURSE])
+    assert calls == [COURSE.id]
+    assert summary.results[0].status == Status.SKIPPED
+    client.close()

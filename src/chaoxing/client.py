@@ -15,6 +15,7 @@ from chaoxing.models import (
     Card,
     Chapter,
     Course,
+    NoChapters,
     ProtocolError,
 )
 from chaoxing.parsing import parse_card, parse_chapters, parse_courses, parse_folders
@@ -39,7 +40,14 @@ class ChaoxingClient:
                 follow_redirects=True,
             )
         )
-        self.http.headers.update({"User-Agent": USER_AGENT})
+        self.http.headers.update(
+            {
+                "User-Agent": USER_AGENT,
+                "sec-ch-ua": '"Chromium";v="118", "Google Chrome";v="118", "Not=A?Brand";v="99"',
+                "sec-ch-ua-mobile": "?0",
+                "sec-ch-ua-platform": '"Windows"',
+            }
+        )
         self.captcha = CaptchaSolver()
         self._last_request = 0.0
 
@@ -89,8 +97,49 @@ class ChaoxingClient:
             raise ProtocolError("服务端返回的数据结构无效")
         return data
 
-    def login(self) -> None:
-        if self.account.use_cookies:
+    def media_get(self, url: str, *, solve_captcha: bool = False, **kwargs: Any) -> httpx.Response:
+        """媒体协议自行处理状态码和上报限流，保留 403 响应用于恢复流程。"""
+        response = self.http.get(url, **kwargs)
+        if solve_captcha and (
+            response.status_code == 403 or "验证码" in response.text or "validate" in response.text
+        ):
+            if self.captcha.solve(self.http):
+                save_cookies(self.http.cookies, self.account.cookies_file)
+                response = self.http.get(url, **kwargs)
+        return response
+
+    def reload_cookies(self) -> None:
+        self.http.cookies.clear()
+        self.http.cookies.update(read_cookies(self.account.cookies_file))
+
+    def relogin_if_needed(self) -> bool:
+        self.reload_cookies()
+        if cookie_value(self.http.cookies, "_uid") or cookie_value(self.http.cookies, "UID"):
+            try:
+                response = self.http.post(
+                    f"{MOOC2}/visit/courselistdata",
+                    data=self._course_query(),
+                    timeout=8,
+                )
+                if (
+                    response.status_code == 200
+                    and "passport2.chaoxing.com" not in response.text
+                    and "login" not in response.text.lower()
+                ):
+                    return True
+            except httpx.HTTPError:
+                pass
+        if self.account.username and self.account.password.get_secret_value():
+            try:
+                self.login(use_cookies=False)
+                return True
+            except (AuthenticationError, CaptchaRequired, httpx.HTTPError):
+                return False
+        return False
+
+    def login(self, *, use_cookies: bool | None = None) -> None:
+        use_cookies = self.account.use_cookies if use_cookies is None else use_cookies
+        if use_cookies:
             self.http.cookies.update(read_cookies(self.account.cookies_file))
             if cookie_value(self.http.cookies, "_uid") or cookie_value(self.http.cookies, "UID"):
                 try:
@@ -162,6 +211,8 @@ class ChaoxingClient:
         )
         chapters = parse_chapters(response.text)
         if not chapters:
+            if "暂无章节内容" in response.text:
+                raise NoChapters("课程暂无章节内容")
             raise ProtocolError("未读取到章节，请检查课程状态或页面结构")
         return chapters
 
@@ -180,6 +231,7 @@ class ChaoxingClient:
                     "ut": "s",
                     "mooc2": "1",
                     "num": str(number),
+                    "v": "2025-0424-1038-3",
                 },
             )
             card = parse_card(response.text)

@@ -93,3 +93,26 @@ def test_noninteractive_missing_credentials_fails(tmp_path: Path) -> None:
         result = cli.invoke(app, ["-c", str(path)])
     assert result.exit_code == 1
     assert "非交互" in result.output
+
+
+def test_notification_test_does_not_initialize_course_client() -> None:
+    with (
+        patch("chaoxing.cli.load_config", return_value=Config()),
+        patch("chaoxing.cli.Telegram") as telegram,
+        patch("chaoxing.cli.ChaoxingClient") as client,
+    ):
+        telegram.return_value.send.return_value = True
+        result = cli.invoke(app, ["--test-notification"])
+    assert result.exit_code == 0
+    telegram.return_value.send.assert_called_once_with("chaoxing：Telegram 推送测试。")
+    client.assert_not_called()
+
+
+def test_notification_test_reports_delivery_failure() -> None:
+    with (
+        patch("chaoxing.cli.load_config", return_value=Config()),
+        patch("chaoxing.cli.Telegram") as telegram,
+    ):
+        telegram.return_value.send.return_value = False
+        result = cli.invoke(app, ["--test-notification"])
+    assert result.exit_code == 1

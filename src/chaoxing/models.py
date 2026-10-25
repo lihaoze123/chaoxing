@@ -21,6 +21,10 @@ class ProtocolError(ChaoxingError):
     pass
 
 
+class NoChapters(ChaoxingError):
+    """平台明确标记该课程没有章节内容。"""
+
+
 @dataclass(frozen=True)
 class Course:
     id: str

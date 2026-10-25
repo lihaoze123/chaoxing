@@ -13,8 +13,13 @@ class Telegram:
     def __init__(self, config: TelegramConfig) -> None:
         self.config = config
 
+    @property
+    def enabled(self) -> bool:
+        return bool(self.config.bot_token.get_secret_value() and self.config.chat_id)
+
     def send(self, message: str) -> bool:
-        if not self.config.bot_token.get_secret_value() or not self.config.chat_id:
+        if not self.enabled:
+            logger.info("Telegram 未配置，已跳过通知")
             return False
         token = self.config.bot_token.get_secret_value()
         url = f"{self.config.api_base}/bot{token}/sendMessage"
@@ -29,12 +34,24 @@ class Telegram:
                             "text": message[start : start + 2000],
                         },
                     )
-                    response.raise_for_status()
-                    if response.json().get("ok") is not True:
-                        logger.warning("Telegram 拒绝了通知请求")
+                    try:
+                        data = response.json()
+                    except ValueError:
+                        data = {}
+                    if not isinstance(data, dict):
+                        data = {}
+                    if not response.is_success or data.get("ok") is not True:
+                        description = str(data.get("description", "未返回有效的成功确认"))
+                        description = description.replace(token, "[已隐藏]")
+                        logger.warning(
+                            "Telegram 通知发送失败：HTTP %s，%s",
+                            response.status_code,
+                            description,
+                        )
                         return False
-        except (httpx.HTTPError, ValueError, AttributeError):
+        except httpx.HTTPError as exc:
             # httpx 异常可能包含 Bot Token，不输出异常原文。
-            logger.warning("Telegram 发送失败，请检查配置、代理和网络")
+            logger.warning("Telegram 发送失败：%s，请检查网络或代理", type(exc).__name__)
             return False
+        logger.info("Telegram 通知已发送（%s 段）", (len(message) + 1999) // 2000)
         return True

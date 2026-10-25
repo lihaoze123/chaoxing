@@ -101,7 +101,7 @@ def _parse_task(card: dict[str, Any]) -> Task | None:
         token=str(card.get("jtoken", "")),
         other_info=str(card.get("otherInfo", "")).split("&")[0],
         played_seconds=max(0.0, float(card.get("playTime", 0)) / 1000),
-        rt=str(prop.get("rt", "")),
+        rt=str(prop.get("rt") or ""),
         media_type="Audio" if kind == "audio" else "Video",
         extra={
             key: str(card.get(key, ""))
@@ -115,7 +115,8 @@ def parse_card(html: str) -> Card:
     if "章节未开放" in html:
         return Card(locked=True, recognized=True)
     # 使用 JSONDecoder 读取对象，避免嵌套对象或字符串中的 }; 提前截断。
-    match = re.search(r"\bmArg\s*=\s*", html)
+    # 空分页只有空字符串声明和运行时赋值，仅匹配实际任务对象。
+    match = re.search(r"\bmArg\s*=\s*(?=\{)", html)
     if match is None:
         return Card()
     try:
@@ -126,9 +127,7 @@ def parse_card(html: str) -> Card:
         attachments = data.get("attachments", [])
         if not isinstance(defaults, dict) or not isinstance(attachments, list):
             raise ValueError
-        interval = float(defaults.get("reportTimeInterval", 60))
-        if not 1 <= interval <= 300:
-            raise ValueError
+        interval = defaults.get("reportTimeInterval") or 60
         if any(not isinstance(item, dict) for item in attachments):
             raise ValueError
         tasks = tuple(task for item in attachments if (task := _parse_task(item)) is not None)
