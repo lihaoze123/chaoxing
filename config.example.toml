@@ -1,0 +1,22 @@
+[account]
+username = ""
+# 可留空，交互输入或使用 CHAOXING_PASSWORD；密码不会显示在终端。
+password = ""
+use_cookies = false
+# 相对路径基于本配置文件所在目录；内容为浏览器 Cookie 请求头，不含 Cookie: 前缀。
+cookies_file = "cookies.txt"
+
+[study]
+# 空数组处理所有课程；字符串 ID 例如 ["2151141", "189191"]。
+course_ids = []
+speed = 1.0
+# 失败操作最多尝试 3 次；测验、未开放章节和验证码不会反复重试。
+max_attempts = 3
+retry_interval = 3.0
+
+[telegram]
+# 同时留空关闭推送，也可使用 TELEGRAM_BOT_TOKEN 和 TELEGRAM_CHAT_ID。
+bot_token = ""
+chat_id = ""
+# 可选中转地址，不包含 /botTOKEN/sendMessage；也支持 HTTPS_PROXY/ALL_PROXY。
+api_base = "https://api.telegram.org"
